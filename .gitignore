@@ -1,0 +1,3 @@
+.venv
+data/data.csv
+out/result.csv
