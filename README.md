@@ -6,17 +6,18 @@
 
 ### How to use
 
-1. Create a .venv dir (pipenv will use it as project virtual env)
+1. Create a .venv dir: (pipenv will use it as project virtual env) 
 ```
 mkdir .venv
 ```
 
-2. Run pipenv install (this will install all dependecnies)
+2. Run pipenv install: (this will install all dependecnies)
 ```
 pipenv install
 ```
 
-3. Place your data csv in data dir, name it 'data.csv'. Your file tree should look like this:
+3. Place your data csv in data dir, name it ```data.csv```. An example is provided, following CAPES' standard.  
+Your file tree should look like this:  
 ```
 .
 +-- .venv
