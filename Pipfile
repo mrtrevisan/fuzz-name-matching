@@ -12,6 +12,7 @@ recordlinkage = "*"
 pandas = "*"
 tabulate = "*"
 pyarrow = "*"
+fasttext = "*"
 
 [dev-packages]
 
