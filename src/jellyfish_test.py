@@ -1,7 +1,7 @@
 import polars as pl
 import requests
 import random
-from thefuzz import fuzz
+import jellyfish
 
 # read the CSV as dataframe
 df = pl.read_csv('./data/data.csv', encoding='windows-1252', separator=';', infer_schema_length=10000)
@@ -22,13 +22,11 @@ if res.status_code == 200:
     data = []
     for r in res.json()['results']:
         n2 = r['display_name'].title()
-        data.append([n1, n2, fuzz.ratio(n1, n2), 'simple ratio'])
+        data.append([n1, n2, jellyfish.levenshtein_distance(n1, n2), 'levenshtein_distance'])
 
-        data.append([n1, n2, fuzz.partial_ratio(n1, n2), 'partial ratio'])
+        data.append([n1, n2, jellyfish.damerau_levenshtein_distance(n1, n2), 'damerau_levenshtein_distance'])
         
-        data.append([n1, n2, fuzz.token_sort_ratio(n1, n2), 'token sort ratio'])
-
-        data.append([n1, n2, fuzz.token_set_ratio(n1, n2), 'token set ratio'])
+        data.append([n1, n2, jellyfish.jaro_winkler_similarity(n1, n2), 'jaro_winkler_similarity'])
 
     outdf = pl.DataFrame(data, schema=["Name1", "Name2", "Score", "Method"], strict=False, orient='row')
     print(outdf)

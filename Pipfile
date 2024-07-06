@@ -7,6 +7,11 @@ name = "pypi"
 thefuzz = "*"
 requests = "*"
 polars-lts-cpu = "*"
+jellyfish = "*"
+recordlinkage = "*"
+pandas = "*"
+tabulate = "*"
+pyarrow = "*"
 
 [dev-packages]
 

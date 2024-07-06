@@ -1,3 +1,4 @@
 .venv
 data/data.csv
-out/result.csv
+out/*.*
+__pycache__
