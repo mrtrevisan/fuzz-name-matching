@@ -29,9 +29,12 @@ Your file tree should look like this:
 |    +-- ...
 ...
 ```
-
-3. Run fuzz test. You may need to adjust the encoding parameter in source code.
+4. Activate .venv python 
+```
+source .venv/bin/activate
+```
+5. Run scripts. You may need to adjust the 'encoding' parameter in source code.
 
 ```
-pipenv run python3 src/fuzz_test.py
+python src/<script>.py
 ```
